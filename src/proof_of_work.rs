@@ -17,7 +17,7 @@ impl ProofOfWork {
         while nonce < MAX_NONCE {
             let data = self.prepare_data(nonce);
             hash = crate::sha256_digest(data.as_slice());
-            let hash_int = BigInt::from_bytes_be(Sign::Plusz, hash.as_slice());
+            let hash_int = BigInt::from_bytes_be(Sign::Plus, hash.as_slice());
 
             if hash_int.lt(self.target.borrow()) {
                 println!("{}", HEXLOWER.encode(hash.as_slice()));

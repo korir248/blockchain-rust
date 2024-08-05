@@ -7,6 +7,16 @@ pub struct Transaction {
     vout: Vec<TXOutput>,
 }
 
+impl Transaction {
+    pub fn get_id(&self) -> &[u8] {
+        self.id.as_slice()
+    }
+
+    pub fn get_vout(&self) -> Vec<TXOutput> {
+        self.vout.clone()
+    }
+}
+
 #[derive(Clone, Serialize, Deserialize)]
 pub struct TXInput {
     txid: Vec<u8>,
