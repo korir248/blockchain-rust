@@ -1,3 +1,8 @@
+use std::borrow::Borrow;
+
+use data_encoding::HEXLOWER;
+use num_bigint::{BigInt, Sign};
+
 use crate::block::Block;
 
 const MAX_NONCE: i64 = 0;
